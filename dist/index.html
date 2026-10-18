@@ -18,7 +18,8 @@
     <button class="envelope-open-hit" id="openEnvelope" type="button" aria-label="Открыть приглашение"></button>
   </div>
   <a class="skip" href="#welcome">Перейти к приглашению</a>
-  <div class="floating-controls" aria-label="Настройки"><button id="languageToggle" type="button" aria-label="Сменить язык"><span data-lang="ru" class="active">RU</span><i></i><span data-lang="ky">KG</span></button></div>
+  <div class="floating-controls" aria-label="Настройки"><button class="music-toggle" id="musicToggle" type="button" aria-label="Включить музыку" aria-pressed="false"><span class="music-note" aria-hidden="true">♫</span></button><button id="languageToggle" type="button" aria-label="Сменить язык"><span data-lang="ru" class="active">RU</span><i></i><span data-lang="ky">KG</span></button></div>
+  <audio id="backgroundMusic" preload="none" loop><source src="assets/music-romance.mp3" type="audio/mpeg"></audio>
   <div id="dataError" class="data-error" hidden><span id="dataErrorText">Не удалось загрузить приглашение.</span><button id="dataRetry" type="button">Повторить</button></div>
 
   <header class="hero" id="top">
@@ -76,7 +77,7 @@
   <footer><p class="kicker" data-i18n="waiting">С ЛЮБОВЬЮ ЖДЁМ ВАС</p><h2><span id="footerFirst">Бекзат</span> <b>&</b> <span id="footerSecond">Алина</span></h2><p id="footerDate">12 июня 2027</p><button class="guest-button" id="openGuests" type="button"><span data-i18n="guests">Посмотреть список гостей</span> ↑</button></footer>
 
   <div class="drawer-shell" id="guestDrawer" aria-hidden="true"><button class="drawer-backdrop" id="drawerBackdrop" type="button" aria-label="Закрыть"></button><section class="guest-drawer" role="dialog" aria-modal="true" aria-labelledby="guestDrawerTitle"><div class="drawer-handle"></div><div class="drawer-head"><div><p class="kicker" data-i18n="guestList">СПИСОК ГОСТЕЙ</p><h2 id="guestDrawerTitle"><span id="drawerFirst">Бекзат</span> & <span id="drawerSecond">Алина</span></h2></div><button id="closeGuests" type="button" aria-label="Закрыть">×</button></div><div class="guest-summary" id="guestSummary"></div><div class="guest-grid" id="guestGrid"></div><p id="guestEmpty" class="guest-empty" data-i18n="emptyGuests">Пока никто не оставил ответ.</p></section></div>
-  <script type="module" src="app.js?v=5"></script>
+  <script type="module" src="app.js?v=6"></script>
 </body>
 </html>
 

@@ -1,6 +1,7 @@
 @font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:'Cormorant Garamond';src:url('assets/fonts/cormorant-medium.ttf') format('truetype');font-weight:500;font-display:swap}
 @font-face{font-family:'Great Vibes';src:url('assets/fonts/great-vibes.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:'Cormorant Grace';src:url('assets/fonts/cormorant-italic.ttf') format('truetype');font-weight:300 700;font-style:normal;font-display:swap}
 @font-face{font-family:Manrope;src:url('assets/fonts/manrope-regular.ttf') format('truetype');font-weight:400;font-display:swap}
 @font-face{font-family:Manrope;src:url('assets/fonts/manrope-medium.ttf') format('truetype');font-weight:500;font-display:swap}
 
