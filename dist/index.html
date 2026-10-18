@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <base href="/">
+  <meta name="theme-color" content="#f8f3eb">
+  <meta name="description" content="Свадебное приглашение — Белый лебедь">
+  <meta property="og:type" content="website"><meta property="og:title" content="Белый лебедь — свадебное приглашение"><meta property="og:description" content="Откройте приглашение и узнайте детали свадебного дня.">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Белый лебедь — свадебное приглашение"><meta name="twitter:description" content="Откройте приглашение и узнайте детали свадебного дня.">
+  <title>Белый лебедь — свадебное приглашение</title>
+  <link rel="preload" as="image" href="assets/swan-hero.webp"><link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <a class="skip" href="#welcome">Перейти к приглашению</a>
+  <div class="floating-controls" aria-label="Настройки"><button id="languageToggle" type="button" aria-label="Сменить язык"><span data-lang="ru" class="active">RU</span><i></i><span data-lang="ky">KG</span></button></div>
+  <div id="dataError" class="data-error" hidden><span id="dataErrorText">Не удалось загрузить приглашение.</span><button id="dataRetry" type="button">Повторить</button></div>
+
+  <header class="hero" id="top">
+    <picture class="hero-media"><video id="heroVideo" muted playsinline autoplay loop poster="assets/swan-hero.webp" aria-hidden="true"><source src="assets/swan-loop.mp4" type="video/mp4"></video><img src="assets/swan-hero.webp" alt="Два белых лебедя на озере в окружении цветов"></picture>
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <p class="eyebrow" data-i18n="invite">ПРИГЛАШЕНИЕ НА СВАДЬБУ</p>
+      <h1><span id="heroFirst">Бекзат</span><b>&</b><span id="heroSecond">Алина</span></h1>
+      <div class="hero-date"><span id="heroDay">12</span><i></i><span id="heroMonth">ИЮНЯ</span><i></i><span id="heroYear">2027</span></div>
+    </div>
+    <a class="scroll-cue" href="#welcome"><span data-i18n="open">ОТКРЫТЬ ПРИГЛАШЕНИЕ</span><b>⌄</b></a>
+  </header>
+
+  <main>
+    <section class="welcome section" id="welcome">
+      <div class="ornament">❦</div><p class="kicker" data-i18n="dear">ДОРОГИЕ РОДНЫЕ И ДРУЗЬЯ</p>
+      <h2 data-i18n="welcomeTitle">В нашей истории начинается<br><em>новая глава</em></h2>
+      <p class="lead" id="welcomeText">Есть моменты, которые хочется разделить с самыми близкими. Будем счастливы видеть вас рядом в день рождения нашей семьи.</p>
+      <p class="signature" id="hostsText">С любовью, наши семьи</p>
+    </section>
+
+    <section class="date-section section">
+      <div class="date-photo"><img src="assets/swan-hero.webp" alt="Белые цветы у озера" loading="lazy"><span></span></div>
+      <div class="date-card">
+        <p class="kicker" data-i18n="saveDate">СОХРАНИТЕ ЭТУ ДАТУ</p><h2 id="dateTitle">12 июня <em>2027</em></h2>
+        <div class="calendar"><div class="calendar-head"><button id="calendarPrev" type="button" aria-label="Предыдущий месяц">←</button><strong id="calendarMonth"></strong><button id="calendarNext" type="button" aria-label="Следующий месяц">→</button></div><div class="week" id="calendarWeek"></div><div class="days" id="calendarDays"></div></div>
+        <button class="text-button" id="calendarDownload" type="button"><span data-i18n="calendar">Добавить в календарь</span> ↗</button>
+      </div>
+    </section>
+
+    <section class="events section" id="events">
+      <div class="section-heading"><p class="kicker" data-i18n="program">ПРОГРАММА ДНЯ</p><h2 data-i18n="programTitle">Каждое мгновение<br><em>этого дня</em></h2></div>
+      <img class="feather-flight" id="featherFlight" src="assets/swan-feather.webp" alt="" aria-hidden="true">
+      <ol class="event-list" id="eventList"></ol>
+    </section>
+
+    <section class="venue section" id="venue">
+      <div class="venue-card">
+        <p class="kicker" data-i18n="place">МЕСТО ВСТРЕЧИ</p><p class="venue-type" id="venueType">Банкетный зал</p><h2 id="venueName">«Изумруд»</h2><div class="rule">✦</div><p id="venueAddress">г. Бишкек, ул. Чуй, 123</p><p class="venue-time"><span data-i18n="gathering">Сбор гостей</span> · <b id="venueTime">16:30</b></p><a id="mapLink" class="primary-button" target="_blank" rel="noopener noreferrer"><span data-i18n="map">Открыть на карте</span> ↗</a>
+      </div>
+    </section>
+
+    <section class="rsvp section" id="rsvp">
+      <div class="rsvp-intro"><p class="kicker">RSVP</p><h2 data-i18n="rsvpTitle">Будете ли вы<br><em>с нами?</em></h2><p data-i18n="rsvpText">Пожалуйста, сообщите о вашем решении. Ваш ответ поможет нам подготовить праздник.</p></div>
+      <form id="rsvpForm" class="rsvp-form">
+        <label><span data-i18n="nameLabel">ВАШЕ ИМЯ</span><input id="guestName" required minlength="2" maxlength="120" autocomplete="name"></label>
+        <fieldset><legend data-i18n="attendLabel">ВЫ СМОЖЕТЕ ПРИЙТИ?</legend><label class="choice"><input type="radio" name="attending" value="yes" checked><span data-i18n="yes">С радостью буду!</span></label><label class="choice"><input type="radio" name="attending" value="no"><span data-i18n="no">К сожалению, не получится</span></label></fieldset>
+        <label id="guestCountWrap"><span data-i18n="countLabel">КОЛИЧЕСТВО ГОСТЕЙ</span><select id="guestCount"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></label>
+        <label><span data-i18n="wishLabel">ПОЖЕЛАНИЕ</span><textarea id="guestWish" rows="3" maxlength="1000"></textarea></label>
+        <button class="primary-button" id="submitRsvp" type="submit"><span data-i18n="send">Отправить ответ</span> <b>♡</b></button><p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer><p class="kicker" data-i18n="waiting">С ЛЮБОВЬЮ ЖДЁМ ВАС</p><h2><span id="footerFirst">Бекзат</span> <b>&</b> <span id="footerSecond">Алина</span></h2><p id="footerDate">12 июня 2027</p><button class="guest-button" id="openGuests" type="button"><span data-i18n="guests">Посмотреть список гостей</span> ↑</button></footer>
+
+  <div class="drawer-shell" id="guestDrawer" aria-hidden="true"><button class="drawer-backdrop" id="drawerBackdrop" type="button" aria-label="Закрыть"></button><section class="guest-drawer" role="dialog" aria-modal="true" aria-labelledby="guestDrawerTitle"><div class="drawer-handle"></div><div class="drawer-head"><div><p class="kicker" data-i18n="guestList">СПИСОК ГОСТЕЙ</p><h2 id="guestDrawerTitle"><span id="drawerFirst">Бекзат</span> & <span id="drawerSecond">Алина</span></h2></div><button id="closeGuests" type="button" aria-label="Закрыть">×</button></div><div class="guest-summary" id="guestSummary"></div><div class="guest-grid" id="guestGrid"></div><p id="guestEmpty" class="guest-empty" data-i18n="emptyGuests">Пока никто не оставил ответ.</p></section></div>
+  <script type="module" src="app.js?v=1"></script>
+</body>
+</html>
+

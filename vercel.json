@@ -1,0 +1,7 @@
+{
+  "$schema":"https://openapi.vercel.sh/vercel.json",
+  "outputDirectory":"dist",
+  "functions":{"api/invitation.js":{"includeFiles":"dist/index.html"}},
+  "routes":[{"src":"/(?<id>[0-9]+)/?","dest":"/api/invitation?id=$id"},{"handle":"filesystem"},{"src":"/.*","dest":"/index.html"}]
+}
+
