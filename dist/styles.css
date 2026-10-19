@@ -2,3 +2,5 @@
 
 
 .map-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.primary-button--alt{background:transparent;color:#765331}@media(max-width:520px){.map-buttons{flex-direction:column}.map-buttons .primary-button{width:100%}}
+
+.welcome{max-width:none;background:radial-gradient(circle at 50% 45%,#faf5ee 0,#f1e6d8 100%)}
