@@ -2,5 +2,6 @@
 
 
 .map-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}.primary-button--alt{background:transparent;color:#765331}@media(max-width:520px){.map-buttons{flex-direction:column}.map-buttons .primary-button{width:100%}}
+.language-options{display:flex;align-items:center;gap:7px}.language-options button{border:0!important;background:none!important;padding:0!important;box-shadow:none!important;opacity:.45}.language-options button.active{opacity:1;color:#8d6733}.api-wish-block{max-width:none}.hero-copy{animation:apiHeroIn 1.15s cubic-bezier(.2,.75,.2,1) both}@keyframes apiHeroIn{from{opacity:0;transform:translate(-50%,calc(-50% + 24px)) scale(.985)}to{opacity:1;transform:translate(-50%,-50%)}}
 
 .welcome{max-width:none;background:radial-gradient(circle at 50% 45%,#faf5ee 0,#f1e6d8 100%)}
