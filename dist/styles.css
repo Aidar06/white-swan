@@ -5,3 +5,13 @@
 .language-options{display:flex;align-items:center;gap:7px}.language-options button{border:0!important;background:none!important;padding:0!important;box-shadow:none!important;opacity:.45}.language-options button.active{opacity:1;color:#8d6733}.api-wish-block{max-width:none}.hero-copy{animation:apiHeroIn 1.15s cubic-bezier(.2,.75,.2,1) both}@keyframes apiHeroIn{from{opacity:0;transform:translate(-50%,calc(-50% + 24px)) scale(.985)}to{opacity:1;transform:translate(-50%,-50%)}}
 
 .welcome{max-width:none;background:radial-gradient(circle at 50% 45%,#faf5ee 0,#f1e6d8 100%)}
+.language-menu{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom));z-index:80;display:flex;flex-direction:row-reverse;align-items:center;gap:8px}
+.language-menu[hidden],.language-menu__panel button[hidden]{display:none!important}
+.language-menu__toggle{width:46px;height:46px;border:1px solid #c7aa7d66;border-radius:50%;background:#fffaf4ed;color:#8d6733;box-shadow:0 9px 30px #5b41251f;font:600 10px var(--sans);letter-spacing:.1em;backdrop-filter:blur(12px)}
+.language-menu__panel{display:flex;align-items:center;gap:3px;max-width:0;padding:0;overflow:hidden;opacity:0;pointer-events:none;transform:translateX(10px);border:1px solid transparent;border-radius:18px;background:#fffaf4ed;box-shadow:0 9px 30px #5b41251c;transition:max-width .32s ease,padding .32s ease,opacity .22s ease,transform .32s ease}
+.language-menu.is-open .language-menu__panel{max-width:190px;padding:5px;opacity:1;pointer-events:auto;transform:none;border-color:#c7aa7d55}
+.language-menu__panel button{min-width:42px;height:34px;padding:0 8px!important;border:0!important;border-radius:13px;background:transparent!important;color:#9b866c;font:600 10px var(--sans);box-shadow:none!important}
+.language-menu__panel button.active{background:#9d7846!important;color:#fff}
+.hero-divider{height:0;width:100%;max-width:100vw;position:relative;z-index:9;margin:0;overflow:visible;clip-path:inset(-180px 0);pointer-events:none}
+.hero-divider img{position:absolute;left:50%;top:0;width:min(1180px,106vw);max-width:none;transform:translate(-50%,-50%);filter:drop-shadow(0 13px 17px #47382733)}
+@media(max-width:800px){.hero-divider{clip-path:inset(-140px 0)}.hero-divider img{width:132vw;min-width:520px}}

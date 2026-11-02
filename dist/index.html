@@ -8,12 +8,11 @@
   <meta property="og:type" content="website"><meta property="og:title" content="Белый лебедь — свадебное приглашение"><meta property="og:description" content="Откройте приглашение и узнайте детали свадебного дня.">
   <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Белый лебедь — свадебное приглашение"><meta name="twitter:description" content="Откройте приглашение и узнайте детали свадебного дня.">
   <title>Белый лебедь — свадебное приглашение</title>
-  <link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="styles.css?v=2"><link rel="stylesheet" href="organic.css?v=2">
+  <link rel="stylesheet" href="fonts.css"><link rel="stylesheet" href="styles.css?v=3"><link rel="stylesheet" href="organic.css?v=2">
 </head>
 <body>
   <a class="skip" href="#welcome">Перейти к приглашению</a>
-  <div class="floating-controls" aria-label="Настройки"><button class="music-toggle" id="musicToggle" type="button" hidden aria-label="Включить музыку" aria-pressed="false"><span class="music-note" aria-hidden="true">♫</span></button><div id="languageToggle" class="language-options" aria-label="Сменить язык"><button type="button" data-lang="ru" class="active">RU</button><i></i><button type="button" data-lang="ky">KG</button><i></i><button type="button" data-lang="kk">KZ</button></div></div>
-  <audio id="backgroundMusic" preload="none" loop></audio>
+  <div id="languageToggle" class="language-menu" aria-label="Выбор языка"><button class="language-menu__toggle" type="button" aria-expanded="false" aria-label="Выбрать язык"><span class="language-menu__current">RU</span></button><div class="language-menu__panel" role="group"><button type="button" data-lang="ru" class="active">RU</button><button type="button" data-lang="ky">KG</button><button type="button" data-lang="kk">KZ</button></div></div>
   <div id="dataError" class="data-error" hidden><span id="dataErrorText">Не удалось загрузить приглашение.</span><button id="dataRetry" type="button">Повторить</button></div>
 
   <header class="hero" id="top">
@@ -71,7 +70,7 @@
   </main>
 
   <footer><p class="kicker" data-i18n="waiting">С ЛЮБОВЬЮ ЖДЁМ ВАС</p><h2><span id="footerFirst">Бекзат</span> <b>&</b> <span id="footerSecond">Алина</span></h2><p id="footerDate">12 июня 2027</p></footer>
-  <script type="module" src="app.js?v=7"></script>
+  <script type="module" src="app.js?v=8"></script>
 </body>
 </html>
 
