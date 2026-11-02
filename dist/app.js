@@ -1,4 +1,4 @@
-import{invitationIdFromPath,adaptXanoInvitation,createGuestPatch}from'./backend-adapter.js';
+import{invitationIdFromPath,adaptXanoInvitation,createGuestPatch}from'./backend-adapter.js?v=3';
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const validMapUrl=value=>{try{const url=new URL(String(value||''));return ['http:','https:'].includes(url.protocol)?url.href:''}catch{return''}};
 const dict={

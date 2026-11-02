@@ -6,7 +6,7 @@ export function createGuestPatch(record,id,guest){
   const numericId=Number(id);if(!record||!Number.isInteger(numericId)||numericId<1||!guest?.name)throw new Error('invalid-guest-patch');
   const previous=Array.isArray(record.guests)?record.guests:[];
   const attending=Boolean(guest.is_attending);
-  return {...record,id:numericId,...(record.priglosi_id?{priglosi_id:Number(record.priglosi_id)}:{}),guests:[...previous,{name:String(guest.name).trim(),wish:String(guest.wish||'').trim(),guests_count:attending?Math.max(1,Number(guest.guests_count)||1):0,is_attending:attending}]};
+  return {id:numericId,languages:record.languages,names:record.names,date:record.date,invitation:record.invitation,wish_block:record.wish_block,ceremonies:record.ceremonies,venue:record.venue,rsvp:record.rsvp,guests:[...previous,{name:String(guest.name).trim(),wish:String(guest.wish||'').trim(),guests_count:attending?Math.max(1,Number(guest.guests_count)||1):0,is_attending:attending}]};
 }
 
 function iso(value){const text=String(value||'');if(!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(text))throw new Error('invalid-date');return /(?:Z|[+-]\d{2}:\d{2})$/.test(text)?text:`${text}+06:00`}
