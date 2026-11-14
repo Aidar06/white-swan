@@ -2,6 +2,6 @@
   "$schema":"https://openapi.vercel.sh/vercel.json",
   "outputDirectory":"dist",
   "functions":{"api/invitation.js":{"includeFiles":"dist/index.html"}},
-  "routes":[{"src":"/preview/?","dest":"/preview.html"},{"src":"/(?<id>[0-9]+)/?","dest":"/api/invitation?id=$id"},{"handle":"filesystem"},{"src":"/.*","dest":"/index.html"}]
+  "routes":[{"src":"/preview/?","dest":"/preview.html"},{"src":"/(?<public_id>[A-Za-z0-9_-]+)/?","dest":"/api/invitation?public_id=$public_id"},{"handle":"filesystem"},{"src":"/.*","dest":"/index.html"}]
 }
 
