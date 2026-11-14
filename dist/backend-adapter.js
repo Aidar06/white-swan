@@ -15,8 +15,9 @@ const pick=(object,language,defaultLanguage='ru')=>object?.[language]||object?.[
 
 export function adaptXanoInvitation(record,fallback){
   const id=String(record?.public_id||''),names=record?.names||{},first=names.groom??names.has,second=names.bride??names.wife;
-  if(!id||!first||!second||!Array.isArray(record.ceremonies))throw new Error('invalid-invitation');
-  const date=iso(record.date),datePart=date.slice(0,10),ordered=[...record.ceremonies].sort((a,b)=>(Number(a.sort_order)||0)-(Number(b.sort_order)||0));
+  const ceremonies=Array.isArray(record?.ceremonies)?record.ceremonies:record?.ceremonies&&typeof record.ceremonies==='object'?Object.values(record.ceremonies):[];
+  if(!id||!first||!second)throw new Error('invalid-invitation');
+  const date=iso(record.date),datePart=date.slice(0,10),ordered=[...ceremonies].sort((a,b)=>(Number(a.sort_order)||0)-(Number(b.sort_order)||0));
   const lastTime=ordered.at(-1)?.time||'23:00',endDate=iso(`${datePart}T${lastTime}:00`);
   const enabled=[...new Set((record.languages?.enabled||['ru']).filter(x=>['ru','ky','kk'].includes(x)))];if(!enabled.length)enabled.push('ru');
   const defaultLanguage=enabled.includes(record.languages?.default)?record.languages.default:enabled[0],locales={};
